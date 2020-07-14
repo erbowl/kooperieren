@@ -38,7 +38,7 @@ export default {
     menus: [
       { title: "Message", icon: "mdi-message", url: "/" },
       { title: "Menu", icon: "mdi-silverware", url: "/menu" },
-      { title: "Favorites", icon: "mdi-heart", url: "/favorites" },
+      { title: "Shopping", icon: "mdi-cart", url: "/shopping" },
       { title: "Rule", icon: "mdi-book-open-page-variant", url: "/rule" }
     ]
   })
