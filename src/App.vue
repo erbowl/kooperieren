@@ -24,6 +24,12 @@
         <span>{{ menu.title }}</span>
         <v-icon>{{ menu.icon }}</v-icon>
       </v-btn>
+      <v-btn to="/notification">
+        <span>Notice</span>
+        <v-badge color="deep-purple accent-4" content="6">
+          <v-icon>mdi-bell</v-icon>
+        </v-badge>
+      </v-btn>
     </v-bottom-navigation>
   </v-app>
 </template>
