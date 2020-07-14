@@ -1,0 +1,3 @@
+{
+  ["@nuxtjs/vuetify"];
+}
