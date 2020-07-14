@@ -1,11 +1,20 @@
 <template>
-  <v-main>
-    <v-row v-for="n in 10" :key="n">
-      <v-col>
+  <v-container>
+    <v-text-field
+      solo
+      label="Prepend inner"
+      prepend-inner-icon="mdi-magnify"
+      class="sizeeee"
+    ></v-text-field>
+    <v-row>
+      <v-col v-for="n in 10" :key="n">
         <Recipe />
       </v-col>
+      <v-btn fixed dark fab bottom right color="pink">
+        <v-icon>mdi-plus</v-icon>
+      </v-btn>
     </v-row>
-  </v-main>
+  </v-container>
 </template>
 
 <script>
