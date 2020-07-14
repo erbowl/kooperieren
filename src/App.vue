@@ -33,21 +33,13 @@
       </v-btn>
     </v-app-bar>
 
-    <v-content> </v-content>
-    <v-bottom-navigation>
-      <v-btn value="recent">
-        <span>Recent</span>
-        <v-icon>mdi-history</v-icon>
-      </v-btn>
-
-      <v-btn value="favorites">
-        <span>Favorites</span>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn value="nearby">
-        <span>Nearby</span>
-        <v-icon>mdi-map-marker</v-icon>
+    <v-content>
+      <router-view />
+    </v-content>
+    <v-bottom-navigation app>
+      <v-btn v-for="menu in menus" :key="menu.title" :to="menu.url">
+        <span>{{ menu.title }}</span>
+        <v-icon>{{ menu.icon }}</v-icon>
       </v-btn>
     </v-bottom-navigation>
   </v-app>
@@ -60,7 +52,12 @@ export default {
   components: {},
 
   data: () => ({
-    //
+    menus: [
+      { title: "Index", icon: "mdi-web", url: "/" },
+      { title: "Menu", icon: "mdi-home", url: "/menu" },
+      { title: "Favorites", icon: "mdi-heart", url: "/favorites" },
+      { title: "About", icon: "mdi-information-variant", url: "/about" }
+    ]
   })
 };
 </script>
