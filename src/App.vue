@@ -1,36 +1,16 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
+    <v-app-bar app color="" dark>
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
           contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          src="@/assets/logo.png"
           transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
+          width="200"
         />
       </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
     </v-app-bar>
 
     <v-content>
@@ -53,10 +33,10 @@ export default {
 
   data: () => ({
     menus: [
-      { title: "Index", icon: "mdi-web", url: "/" },
-      { title: "Menu", icon: "mdi-home", url: "/menu" },
+      { title: "Message", icon: "mdi-message", url: "/" },
+      { title: "Menu", icon: "mdi-silverware", url: "/menu" },
       { title: "Favorites", icon: "mdi-heart", url: "/favorites" },
-      { title: "About", icon: "mdi-information-variant", url: "/about" }
+      { title: "Rule", icon: "mdi-book-open-page-variant", url: "/about" }
     ]
   })
 };
