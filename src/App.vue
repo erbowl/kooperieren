@@ -20,16 +20,18 @@
     </v-main>
 
     <v-bottom-navigation app>
-      <v-btn v-for="menu in menus" :key="menu.title" :to="menu.url">
-        <span>{{ menu.title }}</span>
-        <v-icon>{{ menu.icon }}</v-icon>
-      </v-btn>
-      <v-btn to="/notification">
-        <span>Notice</span>
-        <v-badge color="deep-purple accent-4" content="6">
-          <v-icon>mdi-bell</v-icon>
-        </v-badge>
-      </v-btn>
+      <v-container>
+        <v-btn v-for="menu in menus" :key="menu.title" :to="menu.url" small>
+          <span>{{ menu.title }}</span>
+          <v-icon>{{ menu.icon }}</v-icon>
+        </v-btn>
+        <v-btn to="/notification" small>
+          <span>Notice</span>
+          <v-badge color="deep-purple accent-4" content="6">
+            <v-icon>mdi-bell</v-icon>
+          </v-badge>
+        </v-btn>
+      </v-container>
     </v-bottom-navigation>
   </v-app>
 </template>
@@ -44,8 +46,8 @@ export default {
     menus: [
       { title: "Message", icon: "mdi-message", url: "/" },
       { title: "Menu", icon: "mdi-silverware", url: "/menu" },
-      { title: "Shopping", icon: "mdi-cart", url: "/shopping" },
-      { title: "Rule", icon: "mdi-book-open-page-variant", url: "/rule" }
+      { title: "Shopping", icon: "mdi-cart", url: "/shopping" }
+      // { title: "Rule", icon: "mdi-book-open-page-variant", url: "/rule" }
     ]
   })
 };
