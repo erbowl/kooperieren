@@ -1,13 +1,17 @@
-name: End-to-end tests
+name: main
 on: [push]
 jobs:
   cypress-run:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
-      - run: apt install -y fonts-noto
       - name: Checkout
         uses: actions/checkout@v1
       - name: Cypress run
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v1
         with:
-          command: yarn test:e2e
+          start: yarn run serve
+          wait-on: http://localhost:8080/
+          config_file: cypress.json
+          spec: "tests/e2e/**/*"
+        env:
+          CYPRESS_baseUrl: http://localhost:8080/
