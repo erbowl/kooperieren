@@ -22,10 +22,10 @@
     <MessageBoard />
     <v-subheader>Calendar</v-subheader>
     <v-calendar />
-    <v-subheader>How I feel</v-subheader>
+    <v-subheader>How we feel</v-subheader>
     <v-row>
-      <v-col v-for="n in 3" :key="n">
-        <v-subheader>Someone{{ n * 10 }}</v-subheader>
+      <v-col v-for="n in 3" :key="n" align="center">
+        <h4 class="text-center">Someone{{ n * 10 }}</h4>
         <v-progress-circular
           :size="size"
           :value="value + n * 10"

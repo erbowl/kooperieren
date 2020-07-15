@@ -20,18 +20,16 @@
     </v-main>
 
     <v-bottom-navigation app>
-      <v-container>
-        <v-btn v-for="menu in menus" :key="menu.title" :to="menu.url" small>
-          <span>{{ menu.title }}</span>
-          <v-icon>{{ menu.icon }}</v-icon>
-        </v-btn>
-        <v-btn to="/notification" small>
-          <span>Notice</span>
-          <v-badge color="deep-purple accent-4" content="6">
-            <v-icon>mdi-bell</v-icon>
-          </v-badge>
-        </v-btn>
-      </v-container>
+      <v-btn :to="menu.url" small v-for="menu in menus" :key="menu.title">
+        <span>{{ menu.title }}</span>
+        <v-icon>{{ menu.icon }}</v-icon>
+      </v-btn>
+      <v-btn to="/notification" small>
+        <span>Notice</span>
+        <v-badge color="deep-purple accent-4" content="6">
+          <v-icon>mdi-bell</v-icon>
+        </v-badge>
+      </v-btn>
     </v-bottom-navigation>
   </v-app>
 </template>

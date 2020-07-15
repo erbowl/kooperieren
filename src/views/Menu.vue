@@ -2,9 +2,8 @@
   <v-container>
     <v-text-field
       solo
-      label="Prepend inner"
+      label="What you want to eat?"
       prepend-inner-icon="mdi-magnify"
-      class="sizeeee"
     ></v-text-field>
     <v-row>
       <v-col v-for="n in 10" :key="n">
