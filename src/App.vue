@@ -20,11 +20,16 @@
     </v-main>
 
     <v-bottom-navigation app>
-      <v-btn :to="menu.url" small v-for="menu in menus" :key="menu.title">
+      <v-btn
+        class="bug-fix"
+        :to="menu.url"
+        v-for="menu in menus"
+        :key="menu.title"
+      >
         <span>{{ menu.title }}</span>
         <v-icon>{{ menu.icon }}</v-icon>
       </v-btn>
-      <v-btn to="/notification" small>
+      <v-btn class="bug-fix" to="/notification">
         <span>Notice</span>
         <v-badge color="deep-purple accent-4" content="6">
           <v-icon>mdi-bell</v-icon>
@@ -50,3 +55,9 @@ export default {
   })
 };
 </script>
+
+<style scoped>
+.bug-fix {
+  height: inherit;
+}
+</style>

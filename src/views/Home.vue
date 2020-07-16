@@ -51,6 +51,7 @@ export default {
     value: 60,
     size: 200,
     width: 40
-  })
+  }),
+  methods: {}
 };
 </script>
