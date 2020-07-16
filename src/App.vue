@@ -57,7 +57,8 @@ export default {
 </script>
 
 <style scoped>
+/* buildしたときだけ崩れるので */
 .bug-fix {
-  height: inherit;
+  height: inherit !important;
 }
 </style>
