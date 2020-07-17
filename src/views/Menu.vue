@@ -8,15 +8,16 @@
               <p><v-icon left>mdi-chef-hat</v-icon>Recipe Queue</p>
             </v-expansion-panel-header>
             <v-expansion-panel-content>
-              <v-row dense>
-                <draggable
-                  ghostClass="sortable-ghost"
-                  v-model="myArray"
-                  group="people"
-                  @start="drag = true"
-                  @end="drag = false"
-                >
-                  <v-col cols="12" v-for="i in myArray" :key="i">
+              <draggable
+                ghostClass="sortable-ghost"
+                v-model="myArray"
+                group="people"
+                @start="drag = true"
+                @end="drag = false"
+                class="mx-auto"
+              >
+                <v-row dense v-for="i in myArray" :key="i">
+                  <v-col cols="12">
                     <v-card color="#385F73" dark width="300" class="mx-auto">
                       <v-img
                         src="https://picsum.photos/510/300?random"
@@ -28,8 +29,8 @@
                       </v-card-title>
                     </v-card>
                   </v-col>
-                </draggable>
-              </v-row>
+                </v-row>
+              </draggable>
             </v-expansion-panel-content>
           </v-expansion-panel>
         </v-expansion-panels>
