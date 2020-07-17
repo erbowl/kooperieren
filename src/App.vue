@@ -11,7 +11,37 @@
           width="200"
         />
       </div>
+      <v-spacer></v-spacer>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     </v-app-bar>
+
+    <v-sheet height="100%" class="overflow-hidden">
+      <v-navigation-drawer v-model="drawer" absolute temporary>
+        <v-list-item>
+          <v-list-item-avatar>
+            <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
+          </v-list-item-avatar>
+
+          <v-list-item-content>
+            <v-list-item-title>John Leider</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-divider></v-divider>
+
+        <v-list dense>
+          <v-list-item v-for="item in items" :key="item.title" link>
+            <v-list-item-icon>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
+
+            <v-list-item-content>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-navigation-drawer>
+    </v-sheet>
 
     <v-main>
       <v-container>
@@ -51,6 +81,11 @@ export default {
       { title: "Menu", icon: "mdi-silverware", url: "/menu" },
       { title: "Shopping", icon: "mdi-cart", url: "/shopping" }
       // { title: "Rule", icon: "mdi-book-open-page-variant", url: "/rule" }
+    ],
+    drawer: null,
+    items: [
+      { title: "Home", icon: "mdi-message" },
+      { title: "About", icon: "mdi-message" }
     ]
   })
 };
