@@ -15,8 +15,8 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     </v-app-bar>
 
-    <v-sheet height="100%" class="overflow-hidden">
-      <v-navigation-drawer v-model="drawer" absolute temporary>
+    <v-sheet>
+      <v-navigation-drawer v-model="drawer" temporary app>
         <v-list-item>
           <v-list-item-avatar>
             <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
@@ -85,7 +85,7 @@ export default {
     drawer: null,
     items: [
       { title: "Home", icon: "mdi-message" },
-      { title: "About", icon: "mdi-message" }
+      { title: "Report a bug", icon: "mdi-emoticon-sad-outline" }
     ]
   })
 };
