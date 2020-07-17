@@ -36,6 +36,7 @@
         >
       </v-col>
     </v-row>
+    <p class="text-center">2020/07/17 13:52</p>
   </v-container>
 </template>
 
