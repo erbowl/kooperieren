@@ -67,18 +67,18 @@ export default {
     myArray: [
       {
         id: 1,
-        name: "zsfaef"
+        name: "zsfaef",
       },
       {
         id: 2,
-        name: "zsfaefd"
-      }
-    ]
+        name: "zsfaefd",
+      },
+    ],
   }),
   components: {
     Recipe,
-    draggable
-  }
+    draggable,
+  },
 };
 </script>
 

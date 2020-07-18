@@ -13,7 +13,7 @@ import Rule from "@/components/Rule.vue";
 export default {
   name: "Rules",
   components: {
-    Rule
-  }
+    Rule,
+  },
 };
 </script>

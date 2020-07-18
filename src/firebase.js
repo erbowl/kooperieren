@@ -10,7 +10,7 @@ const config = {
   storageBucket: "koop-1f7bf.appspot.com",
   messagingSenderId: "1006169400342",
   appId: "1:1006169400342:web:9c298a12810c3d3c910137",
-  measurementId: "G-WMRTZ94L2E"
+  measurementId: "G-WMRTZ94L2E",
 };
 
 export default {
@@ -24,30 +24,30 @@ export default {
       // URL must be whitelisted in the Firebase Console.
       url: "https://" + window.location.host,
       // This must be true.
-      handleCodeInApp: true
+      handleCodeInApp: true,
     };
     firebase
       .auth()
       .sendSignInLinkToEmail(email, actionCodeSettings)
-      .then(function() {
+      .then(function () {
         // The link was successfully sent. Inform the user.
         // Save the email locally so you don't need to ask the user for it again
         // if they open the link on the same device.
         window.localStorage.setItem("emailForSignIn", email);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
         // Some error occurred, you can inspect the code: error.code
       });
   },
   logout() {
-    firebase.auth().signOut()
+    firebase.auth().signOut();
   },
   onAuth() {
-    firebase.auth().onAuthStateChanged(user => {
+    firebase.auth().onAuthStateChanged((user) => {
       user = user ? user : {};
-      store.commit('onAuthStateChanged', user);
-      store.commit('onUserStatusChanged', user.uid ? true : false);
+      store.commit("onAuthStateChanged", user);
+      store.commit("onUserStatusChanged", user.uid ? true : false);
     });
-  }
+  },
 };

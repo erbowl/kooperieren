@@ -26,14 +26,14 @@
 </template>
 
 <script>
-import Firebase from './../firebase';
+import Firebase from "./../firebase";
 
 export default {
   name: "Login",
   data: () => ({
-    email: null
+    email: null,
   }),
-  created: function() {
+  created: function () {
     Firebase.onAuth();
   },
   computed: {
@@ -42,16 +42,18 @@ export default {
     },
     userStatus() {
       return this.$store.getters.isSignedIn;
-    }
+    },
   },
   methods: {
     login() {
-      if(!this.email) { return; }
+      if (!this.email) {
+        return;
+      }
       Firebase.login(this.email);
     },
     logout() {
       Firebase.logout();
-    }
-  }
+    },
+  },
 };
 </script>

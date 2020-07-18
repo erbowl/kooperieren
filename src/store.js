@@ -1,12 +1,12 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import Vue from "vue";
+import Vuex from "vuex";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
     user: {},
-    status: false
+    status: false,
   },
   mutations: {
     onAuthStateChanged(state, user) {
@@ -14,7 +14,7 @@ export default new Vuex.Store({
     },
     onUserStatusChanged(state, status) {
       state.status = status; //ログインしてるかどうか true or false
-    }
+    },
   },
   getters: {
     user(state) {
@@ -22,6 +22,6 @@ export default new Vuex.Store({
     },
     isSignedIn(state) {
       return state.status;
-    }
-  }
+    },
+  },
 });

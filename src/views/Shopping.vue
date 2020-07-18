@@ -1,5 +1,5 @@
 <template>
-  <v-container style="max-width: 500px">
+  <v-container style="max-width: 500px;">
     <v-text-field
       v-model="task"
       label="What to buy?"
@@ -83,37 +83,37 @@ export default {
     tasks: [
       {
         done: false,
-        text: "Foobar"
+        text: "Foobar",
       },
       {
         done: false,
-        text: "Fizzbuzz"
-      }
+        text: "Fizzbuzz",
+      },
     ],
-    task: null
+    task: null,
   }),
 
   computed: {
     completedTasks() {
-      return this.tasks.filter(task => task.done).length;
+      return this.tasks.filter((task) => task.done).length;
     },
     progress() {
       return (this.completedTasks / this.tasks.length) * 100;
     },
     remainingTasks() {
       return this.tasks.length - this.completedTasks;
-    }
+    },
   },
 
   methods: {
     create() {
       this.tasks.push({
         done: false,
-        text: this.task
+        text: this.task,
       });
 
       this.task = null;
-    }
-  }
+    },
+  },
 };
 </script>

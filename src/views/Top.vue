@@ -10,10 +10,9 @@ import Login from "@/components/Login.vue";
 export default {
   name: "Top",
   components: {
-    Login
+    Login,
   },
-  data: () => ({
-  }),
-  methods: {}
+  data: () => ({}),
+  methods: {},
 };
 </script>

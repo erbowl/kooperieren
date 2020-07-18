@@ -9,7 +9,7 @@ import Notice from "@/components/Notice.vue";
 export default {
   name: "Notices",
   components: {
-    Notice
-  }
+    Notice,
+  },
 };
 </script>

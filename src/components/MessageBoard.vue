@@ -8,6 +8,6 @@
 export default {
   name: "MessageBoard",
 
-  data: () => ({})
+  data: () => ({}),
 };
 </script>

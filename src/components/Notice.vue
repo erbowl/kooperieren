@@ -21,8 +21,8 @@ export default {
     items: [
       { text: "Real-Time", icon: "mdi-clock" },
       { text: "Audience", icon: "mdi-account" },
-      { text: "Conversions", icon: "mdi-flag" }
-    ]
-  })
+      { text: "Conversions", icon: "mdi-flag" },
+    ],
+  }),
 };
 </script>

@@ -46,13 +46,13 @@ import MessageBoard from "@/components/MessageBoard.vue";
 export default {
   name: "Home",
   components: {
-    MessageBoard
+    MessageBoard,
   },
   data: () => ({
     value: 60,
     size: 200,
-    width: 40
+    width: 40,
   }),
-  methods: {}
+  methods: {},
 };
 </script>

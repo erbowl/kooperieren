@@ -12,7 +12,10 @@
         />
       </div>
       <v-spacer></v-spacer>
-      <v-app-bar-nav-icon v-if="userStatus" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon
+        v-if="userStatus"
+        @click.stop="drawer = !drawer"
+      ></v-app-bar-nav-icon>
     </v-app-bar>
 
     <v-sheet v-if="userStatus">
@@ -75,20 +78,19 @@ import firebase from "firebase";
 export default {
   name: "App",
 
-  components: {
-  },
+  components: {},
 
   data: () => ({
     menus: [
       { title: "Message", icon: "mdi-message", url: "/" },
       { title: "Menu", icon: "mdi-silverware", url: "/menu" },
-      { title: "Shopping", icon: "mdi-cart", url: "/shopping" }
+      { title: "Shopping", icon: "mdi-cart", url: "/shopping" },
     ],
     drawer: null,
     items: [
       { title: "Home", icon: "mdi-message" },
-      { title: "Report a bug", icon: "mdi-emoticon-sad-outline" }
-    ]
+      { title: "Report a bug", icon: "mdi-emoticon-sad-outline" },
+    ],
   }),
   computed: {
     user() {
@@ -96,10 +98,10 @@ export default {
     },
     userStatus() {
       return this.$store.getters.isSignedIn;
-    }
+    },
   },
   methods: {},
-  mounted: function() {
+  mounted: function () {
     // Confirm the link is a sign-in with email link.
     if (firebase.auth().isSignInWithEmailLink(window.location.href)) {
       // Additional state parameters can also be passed via URL.
@@ -117,7 +119,7 @@ export default {
       firebase
         .auth()
         .signInWithEmailLink(email, window.location.href)
-        .then(function(result) {
+        .then(function (result) {
           // Clear email from storage.
           window.localStorage.removeItem("emailForSignIn");
           // You can access the new user via result.user
@@ -127,13 +129,13 @@ export default {
           // result.additionalUserInfo.isNewUser
           console.log(result);
         })
-        .catch(function(error) {
+        .catch(function (error) {
           // Some error occurred, you can inspect the code: error.code
           // Common errors could be invalid email and invalid or expired OTPs.
           console.log(error);
         });
     }
-  }
+  },
 };
 </script>
 

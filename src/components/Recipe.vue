@@ -38,6 +38,6 @@
 export default {
   name: "Recipe",
 
-  data: () => ({})
+  data: () => ({}),
 };
 </script>

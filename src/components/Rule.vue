@@ -23,6 +23,6 @@
 export default {
   name: "Rule",
 
-  data: () => ({})
+  data: () => ({}),
 };
 </script>
