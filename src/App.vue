@@ -48,7 +48,16 @@
 
     <v-main>
       <v-container>
-        <router-view></router-view>
+        <h1 v-show="!firebaseLoad">loading</h1>
+        <transition
+          name="router-transition"
+          enter-active-class="animated fadeIn"
+        >
+          <keep-alive>
+            <router-view v-if="userStatus"></router-view>
+            <Login v-if="firebaseLoad && !userStatus"></Login>
+          </keep-alive>
+        </transition>
       </v-container>
     </v-main>
 
@@ -74,11 +83,15 @@
 
 <script>
 import firebase from "firebase";
+import Firebase from "./firebase";
+import Login from "@/components/Login";
 
 export default {
   name: "App",
 
-  components: {},
+  components: {
+    Login,
+  },
 
   data: () => ({
     menus: [
@@ -93,6 +106,9 @@ export default {
     ],
   }),
   computed: {
+    firebaseLoad() {
+      return this.$store.getters.firebaseLoad;
+    },
     user() {
       return this.$store.getters.user;
     },
@@ -100,7 +116,9 @@ export default {
       return this.$store.getters.isSignedIn;
     },
   },
-  methods: {},
+  created: function () {
+    Firebase.onAuth();
+  },
   mounted: function () {
     // Confirm the link is a sign-in with email link.
     if (firebase.auth().isSignInWithEmailLink(window.location.href)) {
@@ -144,4 +162,5 @@ export default {
 .bug-fix {
   height: inherit !important;
 }
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css";
 </style>

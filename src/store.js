@@ -5,6 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    firebaseLoad: false,
     user: {},
     status: false,
   },
@@ -15,6 +16,9 @@ export default new Vuex.Store({
     onUserStatusChanged(state, status) {
       state.status = status; //ログインしてるかどうか true or false
     },
+    onFirebaseChanged(state, status) {
+      state.firebaseLoad = status;
+    },
   },
   getters: {
     user(state) {
@@ -22,6 +26,9 @@ export default new Vuex.Store({
     },
     isSignedIn(state) {
       return state.status;
+    },
+    firebaseLoad(state) {
+      return state.firebaseLoad;
     },
   },
 });

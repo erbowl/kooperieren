@@ -14,4 +14,4 @@ jobs:
           config_file: cypress.json
           spec: "tests/e2e/**/*"
         env:
-          CYPRESS_baseUrl: http://localhost:8080/
+          CYPRESS_baseUrl: https://localhost:8080/

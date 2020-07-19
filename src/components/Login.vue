@@ -12,7 +12,7 @@
         ></v-text-field>
       </v-col>
     </v-row>
-    <v-row v-if="!userStatus" justify="center">
+    <v-row v-if="!userStatus && !sendEmail" justify="center">
       <v-col cols="12" sm="8" md="6">
         <v-btn v-on:click="login()">Sign Up/In By Sending Email</v-btn>
       </v-col>
@@ -32,10 +32,8 @@ export default {
   name: "Login",
   data: () => ({
     email: null,
+    sendEmail: false,
   }),
-  created: function () {
-    Firebase.onAuth();
-  },
   computed: {
     user() {
       return this.$store.getters.user;
@@ -50,6 +48,7 @@ export default {
         return;
       }
       Firebase.login(this.email);
+      this.sendEmail = true;
     },
     logout() {
       Firebase.logout();
