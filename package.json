@@ -11,13 +11,13 @@
   },
   "dependencies": {
     "core-js": "3.6.5",
-    "firebase": "^7.16.1",
+    "firebase": "7.16.1",
     "register-service-worker": "1.7.1",
     "vue": "2.6.11",
     "vue-router": "3.3.4",
-    "vuedraggable": "^2.24.0",
+    "vuedraggable": "2.24.0",
     "vuetify": "2.3.4",
-    "vuex": "^3.5.1"
+    "vuex": "3.5.1"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "1.11.2",
@@ -32,9 +32,9 @@
     "babel-eslint": "10.1.0",
     "cypress": "4.10.0",
     "deepmerge": "4.2.2",
-    "eslint": "^6.0.0",
+    "eslint": "6.8.0",
     "eslint-plugin-prettier": "3.1.4",
-    "eslint-plugin-vue": "^6.2.2",
+    "eslint-plugin-vue": "6.2.2",
     "fibers": "5.0.0",
     "prettier": "2.0.5",
     "sass": "1.26.10",
