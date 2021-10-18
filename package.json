@@ -30,7 +30,7 @@
     "@vue/cli-service": "4.4.6",
     "@vue/eslint-config-prettier": "6.0.0",
     "babel-eslint": "10.1.0",
-    "cypress": "4.10.0",
+    "cypress": "8.6.0",
     "deepmerge": "4.2.2",
     "eslint": "^6.0.0",
     "eslint-plugin-prettier": "3.1.4",
